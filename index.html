@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HealthCare.gov Premium Estimator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // or 'media'
+      }
+    </script>
+    <style>
+      .visible-scrollbar::-webkit-scrollbar {
+        height: 14px;
+      }
+      .visible-scrollbar::-webkit-scrollbar-track {
+        background-color: #e5e7eb; /* gray-200 */
+      }
+      .visible-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #9ca3af; /* gray-400 */
+        border-radius: 10px;
+        border: 3px solid #e5e7eb; /* gray-200 */
+      }
+      .visible-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #6b7280; /* gray-500 */
+      }
+      .dark .visible-scrollbar::-webkit-scrollbar-track {
+        background-color: #374151; /* gray-700 */
+      }
+      .dark .visible-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #9ca3af; /* gray-400 */
+        border-color: #374151; /* gray-700 */
+      }
+      .dark .visible-scrollbar::-webkit-scrollbar-thumb:hover {
+        background-color: #d1d5db; /* gray-300 */
+      }
+
+      /* Firefox */
+      .visible-scrollbar {
+        scrollbar-width: auto;
+        scrollbar-color: #9ca3af #e5e7eb;
+      }
+      .dark .visible-scrollbar {
+        scrollbar-color: #9ca3af #374151;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.14.0",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-100 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

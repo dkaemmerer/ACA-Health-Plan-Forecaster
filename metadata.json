@@ -1,0 +1,5 @@
+{
+  "name": "ACA Health Plan Forecaster",
+  "description": "Plan your family's healthcare finances with confidence using the ACA Health Plan Forecaster. This powerful tool goes beyond simple, single-year calculators by providing detailed, multi-year projections of your HealthCare.gov premiums, tax credits (subsidies), and out-of-pocket costs. Model your household's future by adding life events like marriage or a new child, and instantly visualize how your expenses change across different income levels as your family grows and ages. Powered by the official HealthCare.gov API, our interactive charts and data tables give you the clarity to make smarter, long-term financial decisions for your family's health.",
+  "requestFramePermissions": []
+}
