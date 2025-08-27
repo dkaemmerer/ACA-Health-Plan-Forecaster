@@ -46,44 +46,56 @@
         scrollbar-color: #9ca3af #374151;
       }
     </style>
-    <!-- SystemJS: In-browser module loader -->
-    <script src="https://unpkg.com/systemjs@6.14.3/dist/s.min.js"></script>
-    <!-- SystemJS Babel Plugin for transpilation -->
-    <script src="https://unpkg.com/systemjs-plugin-babel@0.0.25/plugin-babel.js"></script>
-    <script src="https://unpkg.com/systemjs-plugin-babel@0.0.25/systemjs-babel-build.js"></script>
+    
+    <!-- Using jsdelivr CDN for better reliability -->
+    <!-- 1. Babel 7 Standalone. Provides the 'Babel' global. -->
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.24.9/babel.min.js"></script>
+    <!-- 2. SystemJS module loader (older version for stable plugin API) -->
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@0.21.6/dist/system.js"></script>
+    <!-- 3. SystemJS plugin to connect SystemJS to Babel -->
+    <script src="https://cdn.jsdelivr.net/npm/systemjs-plugin-babel@0.0.25/plugin-babel.min.js"></script>
 
-    <!-- Import Map for SystemJS to locate external packages -->
-    <script type="systemjs-importmap">
-    {
-      "imports": {
-        "react": "https://esm.sh/react@^19.1.1",
-        "react-dom/client": "https://esm.sh/react-dom@^19.1.1/client",
-        "@google/genai": "https://esm.sh/@google/genai@^1.14.0"
-      }
-    }
-    </script>
     <script>
-      // Configure SystemJS to use Babel for TS/TSX files
+      // Configure SystemJS to use Babel and find modules
       System.config({
-        transpiler: 'plugin-babel',
-        meta: {
-          '*.tsx': { loader: 'plugin-babel' },
-          '*.ts': { loader: 'plugin-babel' }
-        },
+        // Use the Babel transpiler plugin
+        transpiler: 'plugin-babel', // This refers to the plugin, not babel itself
+        // Pass options to Babel
         babelOptions: {
-          react: true,
-          typescript: true
+          presets: ['react', 'typescript'] // Babel 7 presets for JSX and TS
+        },
+        // Tell SystemJS where to find external libraries
+        map: {
+          'react': 'https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js',
+          'react-dom/client': 'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js',
+          // The babel plugin needs to be mapped too
+          'plugin-babel': 'https://cdn.jsdelivr.net/npm/systemjs-plugin-babel@0.0.25/plugin-babel.min.js'
+        },
+        // Define how modules are resolved and what their metadata is
+        meta: {
+          // Tell SystemJS that React/ReactDOM are globals from their UMD builds
+          'https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js': { format: 'global', exports: 'React' },
+          'https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js': { format: 'global', exports: 'ReactDOM' },
+          // Tell SystemJS that all our local ts/tsx files should be loaded by our Babel plugin
+          '*.ts': { loader: 'plugin-babel' },
+          '*.tsx': { loader: 'plugin-babel' }
+        },
+        // Define packages to help resolve relative imports like './App'
+        packages: {
+          '.': { // The root directory of our app
+            defaultExtension: 'tsx'
+          }
         }
       });
-      // Use SystemJS to import the app's entry point
+      // Import the main app file to start the application
       System.import('./index.tsx').catch(function(err){ console.error(err); });
     </script>
 <script type="importmap">
 {
   "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/",
-    "react": "https://aistudiocdn.com/react@^19.1.1"
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
   }
 }
 </script>
