@@ -1,11 +1,12 @@
 
+
 import React, { useState, useEffect, ReactNode } from 'react';
-import type { EstimateResponse, PlanStat, PremiumAnalysisData, MetalLevel, CostTier } from '../types';
-import { ChartBarIcon, CalculatorIcon, MetalIcon, DownloadIcon, InfoIcon } from './icons';
-import ResultDisplay from './ResultDisplay';
-import PlanStatsDisplay from './PlanStatsDisplay';
-import PremiumAnalysisTable from './PremiumAnalysisTable';
-import PremiumAnalysisChart from './PremiumAnalysisChart';
+import type { EstimateResponse, PlanStat, PremiumAnalysisData, MetalLevel, CostTier } from '../types.ts';
+import { ChartBarIcon, CalculatorIcon, MetalIcon, DownloadIcon, InfoIcon } from './icons.tsx';
+import ResultDisplay from './ResultDisplay.tsx';
+import PlanStatsDisplay from './PlanStatsDisplay.tsx';
+import PremiumAnalysisTable from './PremiumAnalysisTable.tsx';
+import PremiumAnalysisChart from './PremiumAnalysisChart.tsx';
 
 
 interface Step3Props {

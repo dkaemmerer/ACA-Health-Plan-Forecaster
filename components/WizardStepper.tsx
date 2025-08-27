@@ -1,6 +1,7 @@
 
+
 import React from 'react';
-import { InstructionsIcon, HouseholdIcon, ChartBarIcon } from './icons';
+import { InstructionsIcon, HouseholdIcon, ChartBarIcon } from './icons.tsx';
 
 interface WizardStepperProps {
   steps: string[];

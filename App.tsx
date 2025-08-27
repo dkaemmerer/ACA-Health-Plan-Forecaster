@@ -1,12 +1,13 @@
 
 
+
 import React, { useState, useCallback, useMemo, useRef, ReactNode } from 'react';
-import type { Person, Place, EstimateRequestPayload, EstimateResponse, PlanStatsRequestPayload, PlanStat, PremiumAnalysisData, MetalLevel, CostTier, FutureEvent, County } from './types';
-import { getEligibilityEstimate, getPlanStats, getCountiesByZip } from './services/healthCareGovService';
-import WizardStepper from './components/WizardStepper';
-import Step1_Instructions from './components/Step1_Instructions';
-import Step2_HouseholdIncome from './components/Step2_HouseholdIncome';
-import Step3_Analysis from './components/Step3_Analysis';
+import type { Person, Place, EstimateRequestPayload, EstimateResponse, PlanStatsRequestPayload, PlanStat, PremiumAnalysisData, MetalLevel, CostTier, FutureEvent, County } from './types.ts';
+import { getEligibilityEstimate, getPlanStats, getCountiesByZip } from './services/healthCareGovService.ts';
+import WizardStepper from './components/WizardStepper.tsx';
+import Step1_Instructions from './components/Step1_Instructions.tsx';
+import Step2_HouseholdIncome from './components/Step2_HouseholdIncome.tsx';
+import Step3_Analysis from './components/Step3_Analysis.tsx';
 
 const getCoverageYear = (): number => {
   const today = new Date();

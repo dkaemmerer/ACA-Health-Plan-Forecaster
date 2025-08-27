@@ -1,6 +1,7 @@
 
 
-import type { EstimateRequestPayload, EstimateResponse, PlanStatsRequestPayload, PlanStatsResponse, ServiceResponse, CountiesResponse } from '../types';
+
+import type { EstimateRequestPayload, EstimateResponse, PlanStatsRequestPayload, PlanStatsResponse, ServiceResponse, CountiesResponse } from '../types.ts';
 
 const API_URL_BASE = 'https://marketplace-int.api.healthcare.gov/api/v1/households/eligibility/estimates';
 const STATS_API_URL_BASE = 'https://marketplace-int.api.healthcare.gov/api/v1/plans/search/stats';

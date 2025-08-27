@@ -1,6 +1,6 @@
 import React from 'react';
-import type { EstimateResponse } from '../types';
-import { SpinnerIcon, InfoIcon, CheckCircleIcon, XCircleIcon } from './icons';
+import type { EstimateResponse } from '../types.ts';
+import { SpinnerIcon, InfoIcon, CheckCircleIcon, XCircleIcon } from './icons.tsx';
 
 interface ResultDisplayProps {
   isLoading: boolean;

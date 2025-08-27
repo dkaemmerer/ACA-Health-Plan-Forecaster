@@ -1,6 +1,6 @@
 import React from 'react';
-import type { PlanStat, MetalLevel } from '../types';
-import { MetalIcon, DownloadIcon } from './icons';
+import type { PlanStat, MetalLevel } from '../types.ts';
+import { MetalIcon, DownloadIcon } from './icons.tsx';
 
 interface PlanStatsDisplayProps {
   stats: PlanStat[] | null;

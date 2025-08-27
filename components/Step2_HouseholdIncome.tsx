@@ -1,9 +1,10 @@
 
 
+
 import React, { useState, useEffect, ReactNode } from 'react';
-import type { Person, Place, FutureEvent, FutureSpouse, FutureChild, County } from '../types';
-import PersonCard from './PersonCard';
-import { PlusIcon, InfoIcon, TrashIcon, PencilIcon } from './icons';
+import type { Person, Place, FutureEvent, FutureSpouse, FutureChild, County } from '../types.ts';
+import PersonCard from './PersonCard.tsx';
+import { PlusIcon, InfoIcon, TrashIcon, PencilIcon } from './icons.tsx';
 
 interface Step2Props {
   zipcode: string;

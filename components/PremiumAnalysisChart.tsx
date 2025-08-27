@@ -1,6 +1,7 @@
 
+
 import React, { useMemo } from 'react';
-import type { PremiumAnalysisData, MetalLevel, CostTier } from '../types';
+import type { PremiumAnalysisData, MetalLevel, CostTier } from '../types.ts';
 
 interface ChartProps {
   data: PremiumAnalysisData;

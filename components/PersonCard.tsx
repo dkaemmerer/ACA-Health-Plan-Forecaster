@@ -1,7 +1,7 @@
 
 import React from 'react';
-import type { Person } from '../types';
-import { TrashIcon, InfoIcon } from './icons';
+import type { Person } from '../types.ts';
+import { TrashIcon, InfoIcon } from './icons.tsx';
 
 interface PersonCardProps {
   person: Person;

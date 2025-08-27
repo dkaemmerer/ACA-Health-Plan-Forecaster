@@ -1,11 +1,12 @@
 
 
+
 import React, { useMemo } from 'react';
 import type { 
   PremiumAnalysisData, 
   MetalLevel, 
   CostTier 
-} from '../types';
+} from '../types.ts';
 
 interface PremiumAnalysisTableProps {
   data: PremiumAnalysisData;
