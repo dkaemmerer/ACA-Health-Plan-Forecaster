@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF--8" />
+    <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HealthCare.gov Premium Estimator</title>
@@ -90,6 +90,15 @@
       // Import the main app file to start the application
       System.import('./index.tsx').catch(function(err){ console.error(err); });
     </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
 </head>
   <body class="bg-slate-100 dark:bg-gray-900">
     <div id="root"></div>
